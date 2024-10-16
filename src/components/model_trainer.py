@@ -17,10 +17,19 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
-from src.exception import CustomException
-from src.logger import logging
+# Get the absolute path to the project directory
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-from src.utils import save_object,evaluate_models
+# Add the project directory to the Python path
+sys.path.insert(0, project_dir)
+
+# Now you can import modules from src
+
+# from src.exception import CustomException   error show
+# from src.logger import logging
+from exception import CustomException
+from logger import logging
+from utils import save_object,evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
