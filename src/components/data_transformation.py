@@ -1,4 +1,5 @@
 import sys
+import os
 from dataclasses import dataclass
 
 import numpy as np 
@@ -8,11 +9,20 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
-from src.exception import CustomException
-from src.logger import logging
-import os
+# Get the absolute path to the project directory
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-from src.utils import save_object
+# Add the project directory to the Python path
+sys.path.insert(0, project_dir)
+
+# Now you can import modules from src
+
+# from src.exception import CustomException   error show
+# from src.logger import logging
+from exception import CustomException
+from logger import logging
+from utils import save_object
+
 
 @dataclass
 class DataTransformationConfig:
