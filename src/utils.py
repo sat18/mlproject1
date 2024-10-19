@@ -8,7 +8,18 @@ import pickle
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 
-from src.exception import CustomException
+
+# Get the absolute path to the src directory
+src_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Add the src directory to the Python path
+sys.path.insert(0, src_dir)
+
+# Now you can import modules from src
+# from logger import logging
+# from src.logger import logging
+
+from exception import CustomException
 
 def save_object(file_path, obj):
     try:

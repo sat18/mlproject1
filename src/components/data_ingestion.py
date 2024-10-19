@@ -30,6 +30,7 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+
 # Get the absolute path to the project directory
 project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
